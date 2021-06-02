@@ -16,7 +16,7 @@ services:
     volumes:
       - ./db_data:/bar/lib/mysql
       - ./sql:/home
-      # - ./sql/novaturasdb.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./sql/novaturasdb.sql:/docker-entrypoint-initdb.d/dump.sql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: admin123
