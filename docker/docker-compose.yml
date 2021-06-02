@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  web:
+    build: ./dockerfiles/php
+    volumes:
+      - ../:/var/www/html
+      - ./php:/usr/local/etc/php
+    ports:
+      - 8080:80
+    networks:
+      - novaturas
+    restart: always
+  db:
+    image: mysql
+    # build: ./dockerfiles/sql
+    volumes:
+      - ./db_data:/bar/lib/mysql
+      - ./sql:/home
+      # - ./sql/novaturasdb.sql:/docker-entrypoint-initdb.d/dump.sql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: novaturasdb
+      MYSQL_USER: appadmin
+      MYSQL_PASSWORD: appadmin
+    networks:
+      - novaturas
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: admin123
+    restart: always
+    ports:
+      - 8081:80
+    networks:
+      - novaturas
+networks:
+  novaturas:
+volumes:
+  db_data:

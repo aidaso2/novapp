@@ -1,0 +1,31 @@
+#map {
+  height: 100%;
+}
+
+.nov-modal {
+  height: 80vh;
+  position: relative;
+}
+
+.map-container {
+  height: 100%;
+  width: 70%;
+  float: left;
+}
+
+.nov-control-panel {
+  height: 100%;
+  width: 30%;
+  float: left;
+  background: rgb(187, 186, 176);
+}
+
+.nov-control-panel .row {
+  height: 10%;
+  padding-left: 25px;
+}
+
+.nov-control-panel .row:hover {
+  background: #FFFDD0;
+  cursor: pointer;
+}

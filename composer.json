@@ -1,0 +1,16 @@
+{
+    "name": "aidas/novaturas",
+    "description": "Novaturas flight control",
+    "type": "project",
+    "license": "#",
+    "minimum-stability": "stable",
+    "require": {
+      "ext-curl": "*",
+      "ext-json": "*"
+    },
+    "autoload": {
+      "psr-4": {
+        "NovApp\\": "src/"
+      }
+    }
+}

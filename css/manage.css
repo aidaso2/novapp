@@ -1,0 +1,7 @@
+table tr span:hover {
+    cursor: pointer;
+}
+
+.row form {
+    padding: 25px;
+}
